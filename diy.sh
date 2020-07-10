@@ -12,7 +12,7 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-#sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
 
 # Modify default IP
 #修改默认 IP为192.168.50.5
@@ -26,10 +26,17 @@
 
 #添加主题
 #git clone https://github.com/sypopo/luci-theme-atmaterial.git package/luci-theme-atmaterial
-git clone https://github.com/Leo-Jo-My/luci-theme-opentomato.git package/luci-theme-opentomato
+#git clone https://github.com/Leo-Jo-My/luci-theme-opentomato.git package/luci-theme-opentomato
+
+# add argon theme
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
+rm -rf package/lean/luci-theme-argon && mv luci-theme-argon package/lean/
+
+# Modify Default Theme
+sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase=/luci-static/argon' package/lean/default-settings/files/zzz-default-settings
 
 #添加ssrplus
-git clone https://github.com/fw876/helloworld.git package/helloworld
+#git clone https://github.com/fw876/helloworld.git package/helloworld
 #添加passwall
 #git clone https://github.com/yingdk/openwrt-package.git package/lienol
 #添加hello world
