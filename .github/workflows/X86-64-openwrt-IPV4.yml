@@ -33,7 +33,7 @@ env:
   # 自定义.config文件名
   CONFIG_FILE: IPV4.config
   # 自定义diy.sh文件名
-  DIY_SH: diy.sh
+  DIY_SH: ledediy.sh
   # SSH 连接 Actions 功能。默认false
   SSH_ACTIONS: false
   # 上传 bin 目录。即包含所有 ipk 文件和固件的目录。默认false
