@@ -21,7 +21,7 @@ on:
       - 'IPV4.config'
 #  北京时区是东八区，领先UTC 8个小时，每天凌晨4点编译
   schedule:
-#    - cron: 0 20 * * ?
+    - cron: 15 0 * * *
 #  点[★star]一键编译
   watch:
 #    types: started
