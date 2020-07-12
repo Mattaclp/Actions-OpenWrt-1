@@ -18,7 +18,7 @@ on:
       - master
 #   在下方指定你的配置文件名.config
     paths:
-      - 'IPV6.config'
+      - 'N1v419.config'
 #  北京时区是东八区，领先UTC 8个小时，每天凌晨4点编译
   schedule:
     - cron: 0 04 * * *
