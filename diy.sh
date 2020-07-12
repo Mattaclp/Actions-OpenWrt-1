@@ -9,7 +9,7 @@
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 
 # Uncomment a feed source
-#sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
 sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
@@ -32,6 +32,12 @@ sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
 rm -rf package/lean/luci-theme-argon && mv luci-theme-argon package/lean/
 
+# add VSSR
+git clone https://github.com/jerrykuku/lua-maxminddb.git
+mv lua-maxminddb package/lean/
+git clone https://github.com/jerrykuku/luci-app-vssr.git
+mv luci-app-vssr package/lean/
+
 # Modify Default Theme
 sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase=/luci-static/argon' package/lean/default-settings/files/zzz-default-settings
 
@@ -40,8 +46,8 @@ sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase=/luci-static/argon' pa
 #添加passwall
 #git clone https://github.com/yingdk/openwrt-package.git package/lienol
 #添加hello world
-git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
-git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
+#git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
+#git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
 #添加Openclash
 #git clone https://github.com/vernesong/OpenClash.git package/openclash
 #添加koolproxyR
