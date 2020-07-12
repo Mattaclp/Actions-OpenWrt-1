@@ -21,17 +21,17 @@ on:
       - 'IPV6.config'
 #  北京时区是东八区，领先UTC 8个小时，每天凌晨4点编译
   schedule:
-#    - cron: 0 20 * * ?
+    - cron: 0 04 * * *
 #  点[★star]一键编译
   watch:
 #    types: started
 
 env:
   # 源码仓库地址,源码分支
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/kwokwai6618/lede
   REPO_BRANCH: master
   # 自定义.config文件名
-  CONFIG_FILE: IPV6.config
+  CONFIG_FILE: N1v419.config
   # 自定义diy.sh文件名
   DIY_SH: diy.sh
   # SSH 连接 Actions 功能。默认false
