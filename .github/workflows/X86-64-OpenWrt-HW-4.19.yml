@@ -21,7 +21,7 @@ on:
       - 'x86HW419.config'
 #  北京时区是东八区，领先UTC 8个小时，每天凌晨4点编译
   schedule:
-    - cron: 10 11 * * *
+    - cron: 30 11 * * *
 #  点[★star]一键编译
   watch:
 #    types: started
